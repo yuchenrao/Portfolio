@@ -15,6 +15,6 @@ My contact information.
 
 ## Copyright and License
 
-Copied from http://startbootstrap.com/template-overviews/business-casual/
+Template is downloaded from http://startbootstrap.com/template-overviews/business-casual/
 
 Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/gh-pages/LICENSE) license.
