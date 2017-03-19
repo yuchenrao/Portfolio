@@ -1,4 +1,4 @@
-##Home
+## Home
 A home page about my portfolio.
 
 ## About
@@ -7,7 +7,7 @@ My resume, about my education experience, awards, skills and hobbies.
 
 ## blog
 
-There are projects I researched during my undergraduate years.
+Projects I did.
 
 ## Contact
 
