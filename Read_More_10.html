@@ -87,9 +87,9 @@
 
                 <div class="col-md-11">
                     <p><strong><font size="5">&nbsp;&nbsp;Goal</font></strong></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project has two parts. The first part is about multi-emotion classification(happy, sad, surprise and disgust) based on Opencv and machine learning. The second part is about Baxter drawing control based on joint trajectory action server, Baxter can draw a specific face based on the detected emotion.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project has two parts. The first part is about multi-emotion classification (happy, sad, surprise and disgust) based on OpenCV and SVM algorithm. The second part is about Baxter drawing control based on joint trajectory action server, Baxter can draw a specific face based on the detected emotion.</p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can see the code <a href="https://github.com/yuchenrao/emotion-detection-and-baxter-drawing">here</a>.</p>
-                    <p><strong><font size="5">&nbsp;&nbsp;Emotion classification based on Opencv and machine learning</font></strong></p>
+                    <p><strong><font size="5">&nbsp;&nbsp;Emotion classification based on OpenCV and machine learning</font></strong></p>
 
 <p><strong>
 
@@ -101,25 +101,25 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Cohn-Kanade AU-Coded Facial Expression Database is for research in automatic facial image analysis and synthesis and for perceptual studies.
 </p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I choose and relabeled data for four emotions: happy(302), sad(238), surprise(256) and disgust(218).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I choose and relabeled data for four emotions: happy (302), sad (238), surprise (256) and disgust (218).
 </p>
 <p><strong>
 &nbsp;&nbsp;2. Data pre-processing
 </strong></p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1). Use Opencv Haar cascade to detect human face, and trainsform it to gray;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1). Use OpenCV Haar cascade to detect human face, and transform it to gray;
 </p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2). Extract a new face based on offset coefficients, and reshape it to a 64*64 image;
 </p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3). Extraxt face features based on dense SIFT.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3). Extract face features based on dense SIFT.
 </p>
 <p><strong>
 &nbsp;&nbsp;3. Machine learning
 </strong></p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use SVM machine learning algorithm for training and prediction. The kernel is "linear", and multiclass classification mathod is One-Vs.-One.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use SVM machine learning algorithm for training and prediction. The kernel is "linear", and multiclass classification method is One-Vs.-One.
 </p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this project, I choose training data: testing data = 7:3.
@@ -130,7 +130,7 @@
 </strong></p>
 
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use 5 folds cross-validation to calculate mean score. And then calculate accuracy for training and testing set(98%), and shows the classification report and confusion matrix.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use 5 folds cross-validation to calculate mean score. And then calculate accuracy for training and testing set (98%), and shows the classification report and confusion matrix.
 </p>
 <img class="img-responsive img-border center-block" src="img/classify_result.png" width=70% height="100" alt="">
 <p><strong>
@@ -138,7 +138,7 @@
 </strong></p>
 
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use Opencv to capture each frame of the video and do the same pre-processing for the frame. It can show the emotion it detects.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use OpenCV to capture each frame of the video and do the same pre-processing for the frame. It can show the emotion it detects.
 </p>
 
 <p>
@@ -155,7 +155,7 @@
 </strong></p>
 <p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I design four simple faces to represent happy, sad, surprise and disgust. Then I use joint trajectory action server for the Baxter drawing control. When Baxter get the drawing command, it will use inverse kinematics to calculate a list of reference angles for each joint for baxter arm moving, which based on the trajectory and time setting. There is a code walkthrough for joint trajectory client.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I design four simple faces to represent happy, sad, surprise and disgust. Then I use <a href="http://sdk.rethinkrobotics.com/wiki/Joint_Trajectory_Action_Server">joint trajectory action server</a> for the Baxter drawing control. When Baxter get the drawing command, it will use inverse kinematics to calculate a list of reference angles for each joint for baxter arm moving, which based on the trajectory and time setting. There is a code walkthrough for joint trajectory client.</p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Control.py' is based on move_to_joint_positions and 'trajectory.py' is based on joint trajectory action server.
 </p>
