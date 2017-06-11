@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Boeing Project: Mecanum Wheel Car controlled by RC Controller</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Mecanum wheel car controlled by RC</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Description</strong>
+                    </h2>
+                    <hr>
+                </div>
+<center>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/yWfgmv3jfr8" frameborder="0" allowfullscreen></iframe>
+</center>
+
+                <div class="col-md-11">
+                    <p><strong><font size="5">&nbsp;&nbsp;Project Introduction</font></strong></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In collaboration with the NxR lab, ME398 Senior Design team, and MS in Mechanical Engineering students, the goal for this portion of the project was to source and control a mobile base for a system that would allow 3 or more mobile manipulators to cooperatively position a large-scale manufacturing component.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chainatee and me focus on electrical system setup and Elton focuses on controlling. The demo shows above. </p>
+                    <p><strong><font size="5">&nbsp;&nbsp;Robot Introduction</font></strong></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The robot we use is  <a href="https://www.superdroidrobots.com/shop/item.aspx/programmable-mecanum-wheel-vectoring-robot-ig52-db/1788/">the Superdroid Robots IG52 DB model</a>. This robot has Mecanum wheel, which can rotate 360 degrees, so that the orientation of the manipulators that will be eventually placed on the base will not rotate as the base is moving. Also it's payload is larger than the weight we need. The motor we use has encoder, which can be used to control the velocity for each wheel. The following image is  </p>
+
+                    <p><strong><font size="5">&nbsp;&nbsp;Mechanical System Design and Assembly</font></strong></p>
+
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This robot has three parts. The top floor is the floor to place the mobile manipulators, the mid floor is
+the place for batteries and electrical components, and the lower floor is for mechanical system, motor controllers and Kangaroo.
+</p>
+<p><strong>
+&nbsp;&nbsp;Steps
+</strong></p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Drill a hole on the robot for the wires.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Add motor.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Add wheels.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Add chains.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The image shows below shows how we worke together.
+</p>
+<img class="img-responsive img-border center-block" src="img/boeing2.png" width=70% height="100" alt="">
+
+<p><strong> <font size="5">&nbsp;&nbsp;Electrical System</font></strong></p>
+
+<p><strong>
+
+&nbsp;&nbsp;1. Circuit Design
+</strong></p>
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image shows below is a brief diagram for the circuit.</p>
+<img class="img-responsive img-border center-block" src="img/boeing3.png" width=70% height="100" alt="">
+
+<p><strong>
+&nbsp;&nbsp;2. Electrical part for the lower layer
+</strong></p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each motor controller connects two motors and a Kangaroo. The encoders for each motor connects to the Kangaroo. Control signals from either a microcontroller or a R/C receiver are connected to the Kangaroo to control the motors. The picture for this part shows below:
+
+</p>
+<img class="img-responsive img-border center-block" src="img/boeing4.JPG" width=70% height="100" alt="">
+
+<p><strong>
+&nbsp;&nbsp;3. Electrical part for the mid layer
+</strong></p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The battery can provide 24V for two motor controllers, and we use DC converter to provide 12V for JETSON and 5V for PIC.
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We laser cut two layers, the first layer hold two DC converters and a fuse and the second floor holds a switch, JETSON and a PIC, which shows below:
+</p>
+
+<img class="img-responsive img-border center-block" src="img/boeing5.JPG" width=70% height="100" alt="">
+<img class="img-responsive img-border center-block" src="img/boeing6.JPG" width=70% height="100" alt="">
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following image is what it looks like after we setup.
+</p>
+<img class="img-responsive img-border center-block" src="img/boeing1.JPG" width=70% height="1000" alt="">
+
+<p><strong> <font size="5">&nbsp;&nbsp;Tuning the Kangaroo and Setting up for RC Control
+</font></strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kangaroo has an auto-tuning controller features for the motors connected to it. For tuning the Kangaroo, we first put the Kangaroo in ‘Teach Tuning’ mode, and then rotate both motors at the same time. After rotating the motors in the direction the motors will move in, pushing a button on the Kangaroo will begin the auto-tuning process.
+</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After tuning the Kangaroos, we begin connecting signals of the R/C receiver to the control inputs of both Kangaroos. The controls are setup such that each axis of the joysticks control an individual wheel. For example, the throttle control (up-down on the left joystick) controls the back left wheel, while the rudder control (left-right on the left joystick) controls the front right wheel. The right joystick has a similar setup for the other wheels</p>
+
+<p><strong> <font size="5">&nbsp;&nbsp; Future work
+</font></strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our future plans is to use a microcontroller to control the robot, and setup up a Linux computer using a NVIDIA Jetson that can communicate with the microcontroller, and add the delta robot manipulator with the mobile base.
+</p>
+
+
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="blog.html"><strong><font size="6">Back</font></strong></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
