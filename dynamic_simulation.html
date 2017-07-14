@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dynamic Simulation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Dynamic Simulation of Multi-body Mechanical Systems</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Description</strong>
+                    </h2>
+                    <hr>
+                </div>
+<center>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/dNCd6iHO4XY" frameborder="0" allowfullscreen></iframe>
+</center>
+
+                <div class="col-md-11">
+                    <p><strong><font size="5">&nbsp;&nbsp;Project Introduction</font></strong></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project is about a dynamic simulation of multi-body mechanical systems in generalized coordinates involving friction, impacts, and
+                    external forcing using Mathematica.</p>
+
+                    <p><strong><font size="5">&nbsp;&nbsp;System Introduction</font></strong></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This system is a system about a pendulum hits a plate. There is an impact when the pendulum hits the plate, and I draw a line on the plate to see its rotation. The external force is the friction of the ground.</p>
+                    <p>In this system, when the pendulum hits the plate, the plate starts to run and the pendulum stops moving, because the pendulum transfers energy to the ball. Then, with the friction of the ground, the velocity of the plate decreases to zero.
+                    </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following image shows the system.</p>
+                    <img class="img-responsive img-border center-block" src="img/dynamic.png" width=60% height="100" alt="">
+
+                <p><strong><font size="5">&nbsp;&nbsp;Details</font></strong></p>
+
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1). In the impact part, I use the angle(theta1) of the pendulum and (x,y) coordinates of center of mass of the plate to calculate Euler-Lagrange equation. The constraints are: 1). x always equals to 2; 2). y always equal to 0. The impact constrain is the distance between two centers: when the distance equals 2R, the pendulum hits the plate.
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2). In the rotation part, I use inertia matrix and body velocity of the plate to calculate  Euler-Lagrange equation, which relates to theta2(the angle that the plate rotate) and (x,y) coordinates of center of the plate. And the constraints are: 1). y always equals to zero; 2). theta times radius equals the distance the plate move.</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3). The external forces is the friction of the ground, and I set the friction coefficient equals 0.4.
+</p>
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="blog.html"><strong><font size="6">Back</font></strong></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
