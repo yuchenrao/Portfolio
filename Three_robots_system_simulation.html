@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simulation For A Three-Robot System</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Simulation For A Three-Robot System</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Description</strong>
+                    </h2>
+                    <hr>
+                </div>
+<center>
+<iframe width="800" height="400" src="https://www.youtube.com/embed/FWgzvcaXgQo" frameborder="0" allowfullscreen></iframe>
+</center>
+
+                <div class="col-md-11">
+                    <p><strong><font size="5">&nbsp;&nbsp;Goal</font></strong></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project is trying to simulate a three-robot system by using trep and rviz. In this system, each robot consists of one mobile base robot and one inverse delta robot. And the simulation for this system is about moving one object from one position to another position by controlling these three robots.</p>
+
+                    <p><strong><font size="5">&nbsp;&nbsp;Syetem Description</font></strong></p>
+
+<p><strong>
+
+&nbsp;&nbsp;1. Inverse Delta Robot
+
+</strong></p>
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An inverse delta robot is the inverse version of a delta robot. It is a type of parallel robot, and also a closed loop system. It consists of three arms connected to universal joints at the base. The key design feature is the use of parallelograms in the arms, which maintains the orientation of the end effector.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The inverse delta robot contains 21 DOF, and three constraints. It also has been implemented three springs at the bottom joints.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The image shows how the inverse delta looks like and it's frames.
+</p>
+<img class="img-responsive img-border center-block" src="img/delta.png" width=70% height="100" alt="">
+<p><strong>
+&nbsp;&nbsp;2. Mobile Base Robot
+</strong></p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A mobile base robot is a simple robot with 3 DOF. One inverse delta robot attaches to one mobile base robot, which is one of the three robots in the system. The final robot contains 24 DOF and 3 constraints.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The image shows a final robot.
+</p>
+<img class="img-responsive img-border center-block" src="img/delta_base.png" width=70% height="100" alt="">
+
+<p><strong>
+&nbsp;&nbsp;3. The whole system
+</strong></p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The whole system contains three robots I mentioned above, and a 6 DOF object, which attaches to the three robots. Thus, this system has four closed loop systems, three for three inverse delta robots, and one for the objects plus three robots. This system has 78 DOF, with 15 constraints.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This image shows the system.
+</p>
+<img class="img-responsive img-border center-block" src="img/system.png" width=70% height="100" alt="">
+<p><strong>
+&nbsp;&nbsp;4. Simulation
+</strong></p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To test how this system works, I designed three trajectories.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1). Circle
+</p>
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keep each inverse delta robot stays at the a certain position, use kinematic control for each mobile base robot to make it run as a circle, then the object can follow a circle path. It show in the first part of the video.
+<p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2). Square
+</p>
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keep each inverse delta robot stays at the a certain position, use kinematic control for each mobile base robot to make it run as a square, then the object can follow a square path. It show in the second part of the video.
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3). Object rotation
+</p>
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keep each mobile base robot stays at the a certain position, use kinematic control for each inverse delta robot to make it reach desired position, then the object can rotate by different angles. It show in the third part of the video.
+</p>
+
+
+<p><strong><font size="5">&nbsp;&nbsp;Future Work</font></strong></p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the video, we can see that this system can be controlled appropriately, while the control method I use is kinematic control for mobile base robot or inverse delta robot. So next step should be</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1). control inverse delta robot and mobile base robot simultaneously for a specific trajectory.
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2). Develop a higher controller, which uses inverse kinematics to control inverse delta robot and mobile base robot simultaneously by implementing a trajectory of the object.
+</p>
+<p>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="blog.html"><strong><font size="6">Back</font></strong></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
