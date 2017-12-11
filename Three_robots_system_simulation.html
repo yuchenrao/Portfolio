@@ -101,7 +101,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An inverse delta robot is the inverse version of a delta robot. It is a type of parallel robot, and also a closed loop system. It consists of three arms connected to universal joints at the base. The key design feature is the use of parallelograms in the arms, which maintains the orientation of the end effector.
 </p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The inverse delta robot contains 21 DOF, and three constraints. It also has been implemented three springs at the bottom joints.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The inverse delta robot contains 21 configuration variables, and three constraints. It also has been implemented three springs at the bottom joints.
 </p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The image shows how the inverse delta looks like and it's frames.
@@ -111,7 +111,7 @@
 &nbsp;&nbsp;2. Mobile Base Robot
 </strong></p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A mobile base robot is a simple robot with 3 DOF. One inverse delta robot attaches to one mobile base robot, which is one of the three robots in the system. The final robot contains 24 DOF and 3 constraints.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A mobile base robot is a simple robot with 3 DOF. One inverse delta robot attaches to one mobile base robot, which is one of the three robots in the system. The final robot contains 24 configuration variables and 3 constraints.
 </p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The image shows a final robot.
@@ -122,7 +122,7 @@
 &nbsp;&nbsp;3. The whole system
 </strong></p>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The whole system contains three robots I mentioned above, and a 6 DOF object, which attaches to the three robots. Thus, this system has four closed loop systems, three for three inverse delta robots, and one for the objects plus three robots. This system has 78 DOF, with 15 constraints.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The whole system contains three robots I mentioned above, and a 6 DOF object, which attaches to the three robots. Thus, this system has four closed loop systems, three for three inverse delta robots, and one for the objects plus three robots. This system has 78 configuration variables, with 15 constraints.
 </p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This image shows the system.
